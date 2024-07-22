@@ -3,5 +3,7 @@
     <dimen name="start_pos">285dp</dimen>
     <dimen name="view_width">320dp</dimen>
     <dimen name="move_x">70dp</dimen>
+    <dimen name="move_x_half">250dp</dimen>
+
 
 </resources>
