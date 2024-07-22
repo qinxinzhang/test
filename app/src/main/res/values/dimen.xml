@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="start_pos">250dp</dimen>
+    <dimen name="start_pos">285dp</dimen>
     <dimen name="view_width">320dp</dimen>
     <dimen name="move_x">70dp</dimen>
 
