@@ -11,23 +11,24 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
+import androidx.core.widget.NestedScrollView
 
 
 class MainActivity : AppCompatActivity() {
+    var isTotalExpanded = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val rootView = findViewById<NestedScrollView>(R.id.main)
         val view = findViewById<View>(R.id.cl_anim)
         val semiCircle = findViewById<ConstraintLayout>(R.id.cl_semi_circle)
+
         val ivCircle = view.findViewById<ImageView>(R.id.iv_1)
-
         val ivClose = view.findViewById<ImageView>(R.id.iv_close)
-
 
         val ivArrow = semiCircle.findViewById<ImageView>(R.id.iv_arrow)
 
-
-        val arrowAnimation = TranslateAnimation(0f, 10f, 0f, 0f)
+        val arrowAnimation = TranslateAnimation(0f, -20f, 0f, 0f)
         arrowAnimation.duration = 500
         arrowAnimation.repeatCount = 4
         arrowAnimation.repeatMode = Animation.REVERSE
@@ -59,6 +60,12 @@ class MainActivity : AppCompatActivity() {
         ivClose.setOnClickListener {
             fold.start()
         }
+        rootView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            Log.d("position", scaleX.toString())
+            if (isTotalExpanded) {
+                fold.start()
+            }
+        }
         fold.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(p0: Animator) {
 
@@ -82,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(p0: Animator) {
-
+                isTotalExpanded = true
             }
 
             override fun onAnimationCancel(p0: Animator) {
@@ -92,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        expandHalfCircle.addListener(object : Animator.AnimatorListener{
+        expandHalfCircle.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(p0: Animator) {
             }
 
