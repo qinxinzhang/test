@@ -10,9 +10,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_anim"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        tools:visibility="invisible"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:translationX="250dp"
         android:background="@drawable/semi_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/iv_1"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -38,8 +38,8 @@
 
         <ImageView
             android:id="@+id/iv_2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_1"
@@ -48,8 +48,8 @@
 
         <ImageView
             android:id="@+id/iv_3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_2"
@@ -58,8 +58,8 @@
 
         <ImageView
             android:id="@+id/iv_4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_3"
@@ -68,8 +68,9 @@
 
         <ImageView
             android:id="@+id/iv_close"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="35dp"
+            android:layout_height="70dp"
+            android:paddingVertical="25dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +84,6 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/cl_anim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/cl_anim">
